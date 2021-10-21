@@ -33,7 +33,7 @@ RUN \
   #git clone https://github.com/rems-project/sail.git && \
   opam update -y && \
   #opam pin add sail sail -y && \
-  opam install sail && \
+  opam install sail -y && \
   eval `opam config env -y` && \
   #make -C sail/sailcov && \
   echo ". /home/jenkins/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true" > /home/jenkins/sourceme.sh
