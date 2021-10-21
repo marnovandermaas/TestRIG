@@ -6,7 +6,7 @@ ansiColor('xterm') {
     }
     stage("Build TestRIG builder docker image") {
       copyArtifacts filter: 'bsc-install-focal.tar.xz', fingerprintArtifacts: true, projectName: 'bsc-build'
-      img = docker.build("ctsrd/testrig-builder-mv380", "-f ci/testrig-builder.Dockerfile .")
+      img = docker.build("ctsrd/testrig-builder-mv380", "-f ci/testrig-builder.Dockerfile --no-cache .")
     }
     stage("Push TestRIG builder docker image to docker hub") {
       docker.withRegistry('https://registry.hub.docker.com',
