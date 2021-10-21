@@ -1,4 +1,4 @@
-FROM ctsrd/testrig-builder as testrig
+FROM ctsrd/testrig-builder-mv380 as testrig
 
 # work from the jenkins user home directory
 WORKDIR /home/jenkins
