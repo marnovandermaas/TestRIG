@@ -9,7 +9,7 @@ RUN \
 WORKDIR /home/jenkins
 
 # install packages as root
-ENV PACKAGES="ghc cabal-install build-essential wget opam libgmp-dev z3 m4 pkg-config zlib1g-dev verilator python3 gcc g++ device-tree-compiler libfontconfig libxft2 libtcl8.6 curl rustc cargo"
+ENV PACKAGES="ghc cabal-install build-essential wget opam libgmp-dev z3 m4 pkg-config zlib1g-dev verilator python3 gcc g++ device-tree-compiler libfontconfig libxft2 libtcl8.6 curl rustc"
 RUN \
   apt-get update && \
   DEBIAN_FRONTEND="noninteractive" TZ="Europe/London" apt-get -y -qq install $PACKAGES && \
@@ -44,7 +44,7 @@ RUN \
 # build sail coverage library
 RUN \
   eval `opam config env -y` && \
-  . /home/jenkins/.cargo/env && \
+  #. /home/jenkins/.cargo/env && \
   make -C $OPAM_SWITCH_PREFIX/share/sail/lib/coverage
 
 # install cabal packages
