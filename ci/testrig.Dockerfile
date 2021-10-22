@@ -9,7 +9,7 @@ COPY --chown=jenkins TestRIG ./TestRIG
 RUN \
   . /home/jenkins/sourceme.sh && \
   cd TestRIG && \
-  SAILCOV=1 \
+  #SAILCOV=1 \
   make -j 8 QCVEngine \
   #flute-rv64xcheri \
   sail \
