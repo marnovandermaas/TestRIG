@@ -1,5 +1,5 @@
 ansiColor('xterm') {
-  node("docker") {
+  node("linuxd1") {
     def img
     stage("Clone TestRIG repository") {
       checkout scm
