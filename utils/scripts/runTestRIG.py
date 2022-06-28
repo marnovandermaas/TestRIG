@@ -479,6 +479,7 @@ def spawn_rvfi_dii_server(name, port, log, isa_def):
     cmd += ["-r", str(port)]
   ##############################################################################
   elif name == 'ibex':
+    env2["localhost_PORT"] = str(port)
     cmd = [args.path_to_ibex, 'localhost', str(port)]
   ##############################################################################
   elif name == 'manual':
