@@ -41,3 +41,6 @@
 	path = riscv-implementations/Toooba
 	url = https://github.com/CTSRD-CHERI/Toooba.git
         branch = CHERI
+[submodule "riscv-implementations/ibex"]
+	path = riscv-implementations/ibex
+	url = git@github.com:marnovandermaas/ibex.git
