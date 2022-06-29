@@ -173,7 +173,7 @@ sail-rv64-cheri:
 	$(MAKE) -C riscv-implementations/sail-cheri-riscv c_emulator/cheri_riscv_rvfi_RV64
 
 ibex-rv32ic:
-	$(MAKE) -C riscv-implementations/ibex build-simple-system
+	$(MAKE) -C riscv-implementations/ibex/verilator
 
 ibex-rv32ic-cheri:
 	$(MAKE) -C riscv-implementations/ibex-cheri/verilator
@@ -234,4 +234,5 @@ clean-toooba:
 	fi
 
 clean-ibex:
+	$(MAKE) -C riscv-implementations/ibex/verilator clean
 	$(MAKE) -C riscv-implementations/ibex-cheri/verilator clean
