@@ -154,7 +154,7 @@ parser.add_argument('--path-to-toooba', metavar='PATH', type=str,
   default=op.join(op.dirname(op.realpath(__file__)), "../../riscv-implementations/Toooba/builds/RV64ACDFIMSUxCHERI_Toooba_RVFI_DII_bluesim/exe_HW_sim"),
   help="The PATH to the Toooba executable")
 parser.add_argument('--path-to-ibex', metavar='PATH', type=str,
-  default=op.join(op.dirname(op.realpath(__file__)), "../../riscv-implementations/ibex/verilator/obj_dir/Vibex_core_avalon"),
+  default=op.join(op.dirname(op.realpath(__file__)), "../../riscv-implementations/ibex/build/lowrisc_ibex_ibex_testrig_0/default-verilator/Vibex_top_sram"),
   help="The PATH to the Ibex executable")
 parser.add_argument('--path-to-QCVEngine', metavar='PATH', type=str,
   #default='QCVEngine',
@@ -479,7 +479,7 @@ def spawn_rvfi_dii_server(name, port, log, isa_def):
     cmd += ["-r", str(port)]
   ##############################################################################
   elif name == 'ibex':
-    cmd = [args.path_to_ibex, 'localhost', str(port)]
+    cmd = [args.path_to_ibex, str(port), str(0)]
   ##############################################################################
   elif name == 'manual':
     return None
